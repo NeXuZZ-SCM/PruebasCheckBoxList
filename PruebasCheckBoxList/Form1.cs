@@ -18,25 +18,15 @@ namespace PruebasCheckBoxList
         {
             InitializeComponent();
 
-            dgv_tabla.DataSource = conectarBase();
+            dgv_tabla.DataSource = MostrarTabla();
 
             conectarBase2();
-            //rellenarCheckBoxList();
+
 
         }
 
-        //private void rellenarCheckBoxList()
-        //{
-        //    var lista = conectarBase2();
-        //    foreach (var item in lista)
-        //    {
-        //        checkedListBox1.SetItemChecked(item.permiso, true);
-        //    }
-            
 
-        //}
-
-        private DataTable conectarBase() {
+        private DataTable MostrarTabla() {
 
             string connetionString = @"Data Source=.\SQLExpress;Initial Catalog=HelperLab0;Integrated Security=True;MultipleActiveResultSets=True";
             string consulta = "SELECT * FROM Permisos where nombre_usuario = 'cguazzin';";
